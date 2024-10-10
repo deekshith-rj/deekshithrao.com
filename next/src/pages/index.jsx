@@ -47,8 +47,8 @@ export default function Home({ title, about, meta }) {
           <Link href="/projects/" className="subtle-link">
             PROJECTS
           </Link>
-          <Link href="/writing/" className="subtle-link">
-            WRITING
+          <Link href="/blog/" className="subtle-link">
+            BLOG
           </Link>
         </div>
       </div>
