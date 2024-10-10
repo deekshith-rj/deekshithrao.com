@@ -26,7 +26,7 @@ class WritingPage(Page):
     subpage_types = ["articles.ArticlePage"]
 
     def get_url(self, *args, **kwargs):
-        return f"{settings.FRONTEND_URL}/writing"
+        return f"{settings.FRONTEND_URL}/blog"
 
     def serve(self, request, *args, **kwargs):
         return JsonResponse({
