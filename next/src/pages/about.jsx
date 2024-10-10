@@ -38,7 +38,7 @@ export default function About({ title, text, events, meta }) {
       <h1 className="title">{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: text }} className="intro" />
 
-      <Toggle
+      {/* <Toggle
         value={latestFirst}
         setValue={setLatestFirst}
         trueLabel="Latest First"
@@ -51,7 +51,7 @@ export default function About({ title, text, events, meta }) {
         {sortedEvents.map((event, index) => (
           <Event key={index} event={event} />
         ))}
-      </div>
+      </div> */}
     </main>
   );
 }

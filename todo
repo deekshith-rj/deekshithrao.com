@@ -1,1 +1,4 @@
+# TODO: About page - upgrade to add paragraph breaks, headings, perhaps a pic etc.
 # TODO: Find and replace "Writing" with "Blog" 
+# TODO: Consider upgrading the Project model to a Page model, or just use the Blog post model instead
+# TODO: Check for any more occurrences of "sam" and replace
