@@ -3,9 +3,9 @@ from django.contrib.syndication.views import Feed
 from articles.models import ArticlePage
 
 class ArticlesFeed(Feed):
-    title = "Sam Ireland Writing"
-    link = "/writing"
-    description = "Latest posts and articles by Sam Ireland."
+    title = "Deekshith Rao's Blog"
+    link = "/blog"
+    description = "Latest posts and articles by Deekshith Rao."
 
 
     def items(self):
