@@ -1,4 +1,13 @@
 # TODO: About page - upgrade to add paragraph breaks, headings, perhaps a pic etc.
-# TODO: Find and replace "Writing" with "Blog" 
 # TODO: Consider upgrading the Project model to a Page model, or just use the Blog post model instead
+# TODO: Consider adding a "Contact" page and perhaps a 'mailto:' link in the social media links
+# TODO: Change the favicon for the website
+
+
+# TODO: Consider finding a Wagtail addon to simplify editing the blog posts
+# TODO: Consider adding comments to projects and blog posts
 # TODO: Check for any more occurrences of "sam" and replace
+# TODO: Find and replace "Writing" with "Blog"
+
+
+# TODO: Consider upgrading Wagtail and perhaps Django to the latest versions - only if time permits!!

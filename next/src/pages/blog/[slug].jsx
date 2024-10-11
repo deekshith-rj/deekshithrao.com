@@ -35,7 +35,7 @@ export default function Article({ title, image, date, body, tags, meta }) {
 }
 
 export async function getStaticProps({ params }) {
-  const data = await fetchRemoteData(`writing/${params.slug}`);
+  const data = await fetchRemoteData(`blog/${params.slug}`);
   if (!data) return { notFound: true };
   return {
     props: {
@@ -50,7 +50,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const data = await fetchRemoteData("writing/", { articles: [] });
+  const data = await fetchRemoteData("blog/", { articles: [] });
   const staticPaths = {
     paths: data.articles.map((article) => ({ params: { slug: article.slug } })),
     fallback: "blocking",
