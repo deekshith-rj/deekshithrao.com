@@ -6,12 +6,15 @@
         # DONE: Add a serve method to Project model
         # DONE: Make any required changes to ProjectsPage model
         # DONE: Add get_url method and make any other smaller changes
-        # TODO: Check and debug any issues
+        # DONE: Check and debug any issues
             The database migration is causing a problem, so I'll need to fix that first! 
             The migration has worked fine, but the project page field panels are not showing up in the admin
     # Frontend
-        # Convert projects.jsx into a folder, and add initial [slug] page based on articles/[slug] page
-    # TODO: The page meta title is showing "About - Deekshtih Rao" - incorrect    
+        # DONE: Convert projects.jsx into a folder, and add initial [slug] page based on articles/[slug] page
+    # Fix any issues
+        # TODO: Add project page link to the project on the portfolio page
+        # TODO: Images are not showing on portfolio, blog, and project pages and also perhaps on blog posts
+# TODO: The page meta title is showing "About - Deekshtih Rao" - incorrect    
 # TODO: About page - upgrade to add paragraph breaks, headings, perhaps a pic etc.
 # TODO: Consider adding a "Contact" page and perhaps a 'mailto:' link in the social media links
 # TODO: Change the favicon for the website

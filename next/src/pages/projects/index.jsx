@@ -81,7 +81,7 @@ export default function Projects({ title, text, projects, meta }) {
         {rowsOneColumn.map((row, index) => (
           <div key={index} className="grid grid-cols-1 sm:hidden">
             {row.map((project) => (
-              <Project key={project.name} project={project} />
+              <Project key={project.title} project={project} />
             ))}
           </div>
         ))}
@@ -93,7 +93,7 @@ export default function Projects({ title, text, projects, meta }) {
             } ${rowClass} hidden sm:grid lg:hidden`}
           >
             {row.map((project) => (
-              <Project key={project.name} project={project} />
+              <Project key={project.title} project={project} />
             ))}
           </div>
         ))}
@@ -105,7 +105,7 @@ export default function Projects({ title, text, projects, meta }) {
             } ${rowClass} hidden lg:grid 2xl:hidden`}
           >
             {row.map((project) => (
-              <Project key={project.name} project={project} />
+              <Project key={project.title} project={project} />
             ))}
           </div>
         ))}
@@ -117,7 +117,7 @@ export default function Projects({ title, text, projects, meta }) {
             } ${rowClass} hidden 2xl:grid`}
           >
             {row.map((project) => (
-              <Project key={project.name} project={project} />
+              <Project key={project.title} project={project} />
             ))}
           </div>
         ))}
