@@ -12,16 +12,29 @@
     # Frontend
         # DONE: Convert projects.jsx into a folder, and add initial [slug] page based on articles/[slug] page
     # Fix any issues
-        # TODO: Add project page link to the project on the portfolio page
+        # DONE: Add project page link to the project on the portfolio page
         # TODO: Images are not showing on portfolio, blog, and project pages and also perhaps on blog posts
-# TODO: The page meta title is showing "About - Deekshtih Rao" - incorrect    
+
+MUST:
 # TODO: About page - upgrade to add paragraph breaks, headings, perhaps a pic etc.
+# TODO: The page meta title is showing "About - Deekshtih Rao" - incorrect    
+
+
+
+SHOULD:
+# TODO: Consider finding a Wagtail addon to simplify editing the blog posts - wagtail-markdown?
+# DONE: Consider opening project page / blog post as a new tab
 # TODO: Consider adding a "Contact" page and perhaps a 'mailto:' link in the social media links
 # TODO: Change the favicon for the website
 
 
-# TODO: Consider finding a Wagtail addon to simplify editing the blog posts
+
+COULD:
 # TODO: Consider adding comments to projects and blog posts
+
+
+
+COULD:
 # TODO: Check for any more occurrences of "sam" and replace
 # TODO: Find and replace "Writing" with "Blog"
 
