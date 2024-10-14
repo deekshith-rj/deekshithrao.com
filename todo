@@ -1,5 +1,18 @@
+# TODO: Add Project pages to each project - required frontend / backend work 
+    # Backend
+        # DONE: Change the Project to use a Page model
+        # DONE: Change name to title in both frontend and backend
+        # DONE: Add a body field using StreamField
+        # DONE: Add a serve method to Project model
+        # DONE: Make any required changes to ProjectsPage model
+        # DONE: Add get_url method and make any other smaller changes
+        # TODO: Check and debug any issues
+            The database migration is causing a problem, so I'll need to fix that first! 
+            The migration has worked fine, but the project page field panels are not showing up in the admin
+    # Frontend
+        # Convert projects.jsx into a folder, and add initial [slug] page based on articles/[slug] page
+    # TODO: The page meta title is showing "About - Deekshtih Rao" - incorrect    
 # TODO: About page - upgrade to add paragraph breaks, headings, perhaps a pic etc.
-# TODO: Consider upgrading the Project model to a Page model, or just use the Blog post model instead
 # TODO: Consider adding a "Contact" page and perhaps a 'mailto:' link in the social media links
 # TODO: Change the favicon for the website
 

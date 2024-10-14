@@ -16,7 +16,7 @@ class HomePage(Page):
 
     subpage_types = [
         "articles.WritingPage",
-        "projects.ProjectsPage",
+        "projects.PortfolioPage",
         "about.AboutPage",
     ]
 
