@@ -102,7 +102,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True
 
-WAGTAIL_SITE_NAME = "samireland.com"
+WAGTAIL_SITE_NAME = "deekshithrao.com"
 
 WAGTAILIMAGES_EXTENSIONS = ["gif", "jpg", "jpeg", "png", "webp", "svg"]
 

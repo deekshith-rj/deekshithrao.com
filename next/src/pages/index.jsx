@@ -35,8 +35,9 @@ export default function Home({ title, about, meta }) {
         </div>
 
         <img
-          src="/images/sam.png"
-          alt="Sam Ireland"
+          // src="/images/sam.png"
+          src="/images/deekshith.jpg"
+          alt="Deekshith Rao"
           className="fade-in-40 fixed bottom-0 left-0 opacity-40 grayscale w-0 xs:w-64 sm:w-96 md:w-108 2xl:w-full 2xl:max-w-2xl 3xl:max-w-4xl"
         />
 
