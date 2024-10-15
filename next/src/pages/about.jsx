@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Event from "../components/Event";
+import ArticleBody from "@/components/ArticleBody";
 import { fetchRemoteData } from "@/fetch";
 import { useState } from "react";
 import Toggle from "@/components/Toggle";
@@ -21,7 +22,8 @@ export default function About({ title, text, events, meta }) {
         <title>{`${meta.title} - Deekshith Rao`}</title>
         <meta name="description" content={meta.description} />
         <meta content="summary_large_image" name="twitter:card" />
-        <meta content="@samirelanduk" name="twitter:site" />
+        <meta content="@samirelanduk" name="twitter:site" />{" "}
+        {/* TODO: Replace with my Twitter handle */}
         <meta content={meta.title} name="twitter:title" />
         <meta content={meta.description} name="twitter:description" />
         <meta
@@ -36,7 +38,8 @@ export default function About({ title, text, events, meta }) {
         <meta property="og:description" content={meta.description} />
       </Head>
       <h1 className="title">{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: text }} className="intro" />
+      {/* <div dangerouslySetInnerHTML={{ __html: text }} className="intro" /> */}
+      <ArticleBody blocks={text} />
 
       {/* <Toggle
         value={latestFirst}

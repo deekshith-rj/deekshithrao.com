@@ -42,9 +42,32 @@ class AboutPage(Page):
     
 
     def serve(self, request, *args, **kwargs):
+        blocks = []
+        for block in self.text:
+            if block.block_type == "text":
+                blocks.append({
+                    "type": block.block_type,
+                    "value": block.render()
+                })
+            elif block.block_type == "figure":
+                blocks.append({
+                    "type": block.block_type,
+                    "value": {
+                        "image": block.value["image"].file.url,
+                        "caption": str(block.value["caption"]),
+                    }
+                })
+            elif block.block_type == "code":
+                blocks.append({
+                    "type": block.block_type,
+                    "value": {
+                        "language": block.value["language"],
+                        "code": block.value["code"],
+                    }
+                })
         return JsonResponse({
             "title": self.title,
-            "text": str(RichText(self.text)),
+            "text": blocks,
             "events": [{
                 "name": event.name,
                 "start": event.start,
