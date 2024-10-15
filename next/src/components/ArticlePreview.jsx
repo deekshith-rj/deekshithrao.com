@@ -9,8 +9,6 @@ const ArticlePreview = (props) => {
   return (
     <Link
       href={`/blog/${article.slug}`}
-      target="_blank"
-      rel="noopener noreferrer"
       className="flex flex-col gap-y-4 gap-x-4 group w-full max-w-sm sm:max-w-3xl sm:flex-row  lg:max-w-4xl 3xl:max-w-2xl"
     >
       <img

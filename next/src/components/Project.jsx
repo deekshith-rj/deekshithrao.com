@@ -46,8 +46,6 @@ const Project = (props) => {
         >
           <Link
             href={`/projects/${project.slug}`}
-            target="_blank"
-            rel="noopener noreferrer"
             // className="flex flex-col gap-y-4 gap-x-4 group w-full max-w-sm sm:max-w-3xl sm:flex-row  lg:max-w-4xl 3xl:max-w-2xl"
           >
             {project.title}
@@ -58,11 +56,7 @@ const Project = (props) => {
             }`}
           >
             {`/projects/${project.slug}` && (
-              <a
-                href={`/projects/${project.slug}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={`/projects/${project.slug}`}>
                 <WebIcon className={linkClass} />
               </a>
             )}
