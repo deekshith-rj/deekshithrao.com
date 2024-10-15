@@ -18,7 +18,7 @@ export default function About({ title, text, events, meta }) {
   return (
     <main className="mx-auto max-w-6xl xl:max-w-5xl">
       <Head>
-        <title>{`${meta.title} - Deekshtih Rao`}</title>
+        <title>{`${meta.title} - Deekshith Rao`}</title>
         <meta name="description" content={meta.description} />
         <meta content="summary_large_image" name="twitter:card" />
         <meta content="@samirelanduk" name="twitter:site" />
