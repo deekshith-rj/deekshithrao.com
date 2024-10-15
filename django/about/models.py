@@ -2,7 +2,9 @@ from django.db import models
 from django.core.validators import RegexValidator
 from wagtail.models import Page
 from wagtail.rich_text import RichText
-from wagtail.fields import RichTextField
+from wagtail.fields import RichTextField, StreamField
+from wagtail import blocks
+from wagtail.images.blocks import ImageChooserBlock
 from django.http import JsonResponse
 from django.conf import settings
 from wagtail.admin.panels import FieldPanel, InlinePanel
@@ -11,7 +13,18 @@ from modelcluster.fields import ParentalKey
 
 class AboutPage(Page):
 
-    text = RichTextField(blank=True, max_length=1000)
+    # text = RichTextField(blank=True, max_length=1000)
+    text = StreamField([
+        ("text", blocks.RichTextBlock(features=["bold", "link", "italic", "h2", "h3", "ol", "ul", "code", "strikethrough"])),
+        ("figure", blocks.StructBlock([
+            ("image", ImageChooserBlock()),
+            ("caption", blocks.RichTextBlock(features=["bold", "link", "italic"], required=False)),
+        ], icon="image")),
+        ("code", blocks.StructBlock([
+            ("language", blocks.CharBlock()),
+            ("code", blocks.TextBlock()),
+        ], icon="code")),
+    ], use_json_field=True)
 
     content_panels = Page.content_panels + [
         FieldPanel("text"),
