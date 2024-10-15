@@ -1,4 +1,4 @@
-# TODO: Add Project pages to each project - required frontend / backend work 
+# DONE: Add Project pages to each project - required frontend / backend work 
     # Backend
         # DONE: Change the Project to use a Page model
         # DONE: Change name to title in both frontend and backend
@@ -13,7 +13,7 @@
         # DONE: Convert projects.jsx into a folder, and add initial [slug] page based on articles/[slug] page
     # Fix any issues
         # DONE: Add project page link to the project on the portfolio page
-        # TODO: Images are not showing on portfolio, blog, and project pages and also perhaps on blog posts
+        # DONE: Images are not showing on portfolio, blog, and project pages and also perhaps on blog posts
 
 MUST:
 # TODO: About page - upgrade to add paragraph breaks, headings, perhaps a pic etc.
