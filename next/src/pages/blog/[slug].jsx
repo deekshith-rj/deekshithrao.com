@@ -4,18 +4,24 @@ import { fetchRemoteData } from "@/fetch";
 import ArticleFooter from "@/components/ArticleFooter";
 import ArticleHeader from "@/components/ArticleHeader";
 
-export default function Article({title, image, date, body, tags, meta}) {
+export default function Article({ title, image, date, body, tags, meta }) {
   return (
     <main>
       <Head>
-        <title>{`${meta.title} - Sam Ireland`}</title>
+        <title>{`${meta.title} - Deekshith Rao`}</title>
         <meta name="description" content={meta.description} />
-        <meta content="summary_large_image" name="twitter:card"/>
-        <meta content="@samirelanduk" name="twitter:site"/>
-        <meta content={meta.title} name="twitter:title"/>
-        <meta content={meta.description} name="twitter:description"/>
-        <meta content={`${process.env.NEXT_PUBLIC_MEDIA_URL}/${image}`} property="twitter:image"/>
-        <meta content={`${process.env.NEXT_PUBLIC_MEDIA_URL}/${image}`} property="og:image"/>
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta content="@samirelanduk" name="twitter:site" />
+        <meta content={meta.title} name="twitter:title" />
+        <meta content={meta.description} name="twitter:description" />
+        <meta
+          content={`${process.env.NEXT_PUBLIC_MEDIA_URL}/${image}`}
+          property="twitter:image"
+        />
+        <meta
+          content={`${process.env.NEXT_PUBLIC_MEDIA_URL}/${image}`}
+          property="og:image"
+        />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
       </Head>
@@ -25,13 +31,12 @@ export default function Article({title, image, date, body, tags, meta}) {
         <ArticleFooter tags={tags} title={title} />
       </article>
     </main>
-  )
+  );
 }
 
-
 export async function getStaticProps({ params }) {
-  const data = await fetchRemoteData(`writing/${params.slug}`);
-  if (!data) return {notFound: true};
+  const data = await fetchRemoteData(`blog/${params.slug}`);
+  if (!data) return { notFound: true };
   return {
     props: {
       title: data.title,
@@ -39,16 +44,16 @@ export async function getStaticProps({ params }) {
       date: data.date,
       body: data.body,
       tags: data.tags,
-      meta: data.meta
-    }
-  }
+      meta: data.meta,
+    },
+  };
 }
 
 export async function getStaticPaths() {
-  const data = await fetchRemoteData("writing/", {articles: []});
+  const data = await fetchRemoteData("blog/", { articles: [] });
   const staticPaths = {
-    paths: data.articles.map(article => ({params: { slug: article.slug }})),
-    fallback: "blocking"
-  }
+    paths: data.articles.map((article) => ({ params: { slug: article.slug } })),
+    fallback: "blocking",
+  };
   return staticPaths;
 }

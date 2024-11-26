@@ -26,7 +26,7 @@ class WritingPage(Page):
     subpage_types = ["articles.ArticlePage"]
 
     def get_url(self, *args, **kwargs):
-        return f"{settings.FRONTEND_URL}/writing"
+        return f"{settings.FRONTEND_URL}/blog"
 
     def serve(self, request, *args, **kwargs):
         return JsonResponse({
@@ -78,14 +78,14 @@ class ArticlePage(Page):
 
     preview_modes = []
 
-    also_revalidate = ["/writing"]
+    also_revalidate = ["/blog"]
 
     def __str__(self):
         return self.title
 
 
     def get_url(self, *args, **kwargs):
-        return f"{settings.FRONTEND_URL}/writing/{self.slug}"
+        return f"{settings.FRONTEND_URL}/blog/{self.slug}"
     
 
     def serve(self, request, *args, **kwargs):

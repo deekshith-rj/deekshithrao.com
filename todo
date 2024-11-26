@@ -1,0 +1,44 @@
+# DONE: Add Project pages to each project - required frontend / backend work 
+    # Backend
+        # DONE: Change the Project to use a Page model
+        # DONE: Change name to title in both frontend and backend
+        # DONE: Add a body field using StreamField
+        # DONE: Add a serve method to Project model
+        # DONE: Make any required changes to ProjectsPage model
+        # DONE: Add get_url method and make any other smaller changes
+        # DONE: Check and debug any issues
+            The database migration is causing a problem, so I'll need to fix that first! 
+            The migration has worked fine, but the project page field panels are not showing up in the admin
+    # Frontend
+        # DONE: Convert projects.jsx into a folder, and add initial [slug] page based on articles/[slug] page
+    # Fix any issues
+        # DONE: Add project page link to the project on the portfolio page
+        # DONE: Images are not showing on portfolio, blog, and project pages and also perhaps on blog posts
+
+MUST:
+# DONE: About page - upgrade to add paragraph breaks, headings, perhaps a pic etc.
+# DONE: The page meta title is showing "About - Deekshtih Rao" - incorrect
+# TODO: Include WhatsApp & Facebook in the social sharing links (everywhere? - home page and project pages / blog posts)
+# DONE: H2 in project page / blog post is not large enough - no issue, data was incorrectly entered
+# TODO: About page - Title is not left-aligned
+
+
+SHOULD:
+# TODO: Consider finding a Wagtail addon to simplify editing the blog posts - wagtail-markdown?
+# DONE: Consider opening project page / blog post as a new tab
+# TODO: Consider adding a "Contact" page and perhaps a 'mailto:' link in the social media links
+# TODO: Change the favicon for the website
+
+
+
+COULD:
+# TODO: Consider adding comments to projects and blog posts
+
+
+
+COULD:
+# TODO: Check for any more occurrences of "sam" and replace
+# TODO: Find and replace "Writing" with "Blog"
+
+
+# TODO: Consider upgrading Wagtail and perhaps Django to the latest versions - only if time permits!!

@@ -14,7 +14,7 @@ env = environ.Env(
     DB_URL=(str, "sqlite:///db.sqlite3"),
     WAGTAILADMIN_BASE_URL=(str, "admin"),
     FRONTEND_URL=(str, "http://localhost"),
-    INTERNAL_FRONTEND_URL=(str, "http://sidc_next:3000"),
+    INTERNAL_FRONTEND_URL=(str, "http://localhost:3000"),
 )
 
 ALLOWED_HOSTS = ["*"]
@@ -102,7 +102,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True
 
-WAGTAIL_SITE_NAME = "samireland.com"
+WAGTAIL_SITE_NAME = "deekshithrao.com"
 
 WAGTAILIMAGES_EXTENSIONS = ["gif", "jpg", "jpeg", "png", "webp", "svg"]
 

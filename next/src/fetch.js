@@ -10,4 +10,4 @@ export const fetchRemoteData = async (path, fallback) => {
       throw err;
     }
   }
-}
+};
