@@ -11,14 +11,17 @@ from wagtail.admin.panels import FieldPanel, InlinePanel
 from wagtail.models import Orderable, ClusterableModel
 from modelcluster.fields import ParentalKey
 
+
 class AboutPage(Page):
 
     # text = RichTextField(blank=True, max_length=1000)
     text = StreamField([
-        ("text", blocks.RichTextBlock(features=["bold", "link", "italic", "h2", "h3", "ol", "ul", "code", "strikethrough"])),
+        ("text", blocks.RichTextBlock(features=[
+         "bold", "link", "italic", "h2", "h3", "ol", "ul", "code", "strikethrough"])),
         ("figure", blocks.StructBlock([
             ("image", ImageChooserBlock()),
-            ("caption", blocks.RichTextBlock(features=["bold", "link", "italic"], required=False)),
+            ("caption", blocks.RichTextBlock(features=[
+             "bold", "link", "italic"], required=False)),
         ], icon="image")),
         ("code", blocks.StructBlock([
             ("language", blocks.CharBlock()),
@@ -39,7 +42,6 @@ class AboutPage(Page):
 
     def get_url(self, *args, **kwargs):
         return f"{settings.FRONTEND_URL}/about"
-    
 
     def serve(self, request, *args, **kwargs):
         blocks = []
@@ -89,33 +91,33 @@ class AboutPage(Page):
         })
 
 
-
 class EventBase(models.Model):
 
     class Meta:
         abstract = True
-    
+
     name = models.CharField(max_length=100)
     start = models.CharField(max_length=7, validators=[
         RegexValidator(
-            regex="\d\d\d\d-\d\d",
+            regex=r"\d\d\d\d-\d\d",
             message="Must be in the format YYYY=MM",
         ),
     ])
     end = models.CharField(max_length=7, blank=True, validators=[
         RegexValidator(
-            regex="\d\d\d\d-\d\d",
+            regex=r"\d\d\d\d-\d\d",
             message="Must be in the format YYYY=MM",
         ),
     ])
     description = RichTextField(blank=True, max_length=1000)
-    image = models.ForeignKey("wagtailimages.Image", null=True, blank=True, on_delete=models.SET_NULL, related_name="+")
-
+    image = models.ForeignKey("wagtailimages.Image", null=True,
+                              blank=True, on_delete=models.SET_NULL, related_name="+")
 
 
 class Event(Orderable, ClusterableModel, EventBase):
-    
-    page = ParentalKey(AboutPage, on_delete=models.CASCADE, related_name="events")
+
+    page = ParentalKey(AboutPage, on_delete=models.CASCADE,
+                       related_name="events")
 
     panels = [
         FieldPanel("name"),
@@ -127,10 +129,10 @@ class Event(Orderable, ClusterableModel, EventBase):
     ]
 
 
-
 class SubEvent(Orderable, EventBase):
-    
-    event = ParentalKey(Event, on_delete=models.CASCADE, related_name="subevents")
+
+    event = ParentalKey(Event, on_delete=models.CASCADE,
+                        related_name="subevents")
 
     panels = [
         FieldPanel("name"),
