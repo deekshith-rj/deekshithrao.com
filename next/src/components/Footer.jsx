@@ -29,7 +29,7 @@ const Footer = (props) => {
           </svg>
         </a>
         <a
-          href="https://twitter.com/deekshith44106"
+          href="https://twitter.com/darkn8dj"
           target="_blank"
           rel="noopener noreferrer"
         >
