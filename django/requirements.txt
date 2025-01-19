@@ -2,3 +2,4 @@ Django==4.2.2
 django-environ==0.10.0
 wagtail==5.1
 django_cors_headers
+gunicorn
