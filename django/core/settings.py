@@ -2,35 +2,52 @@ import os
 import environ
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 env = environ.Env(
-    DEBUG=(bool, True),
     SECRET_KEY=(str, "12345"),
     REVALIDATE_TOKEN=(str, "12345"),
     STATIC_ROOT=(str, os.path.join(BASE_DIR, "static")),
     MEDIA_ROOT=(str, os.path.join(BASE_DIR, "media")),
     DB_URL=(str, "sqlite:///db.sqlite3"),
     WAGTAILADMIN_BASE_URL=(str, "admin"),
-    FRONTEND_URL=(str, "http://localhost"),
+    # FRONTEND_URL=(str, "http://localhost"),
     INTERNAL_FRONTEND_URL=(str, "http://localhost:3000"),
 )
+env.read_env(os.path.join(PROJECT_DIR, ".env"))  # Reading from .env file
+print("DEBUG value is : ")
+print(env("DEBUG"))
+DEBUG = env("DEBUG")
+SECRET_KEY = env("SECRET_KEY")
+STATIC_ROOT = env("STATIC_ROOT")
+MEDIA_ROOT = env("MEDIA_ROOT")
+FRONTEND_URL = env("FRONTEND_URL")
+INTERNAL_FRONTEND_URL = env("INTERNAL_FRONTEND_URL")
+WAGTAILADMIN_BASE_URL = env("WAGTAILADMIN_BASE_URL")
+WAGTAIL_SITE_NAME = env("WAGTAIL_SITE_NAME")
+REVALIDATE_TOKEN = env("REVALIDATE_TOKEN")
 
+# URLs
+ROOT_URLCONF = "core.urls"
+STATIC_URL = "/static/"
+MEDIA_URL = "/media/"
+DATABASES = {
+    "default": env.db("DB_URL")
+}
+
+# Security
 ALLOWED_HOSTS = ["*"]
-
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
     env("FRONTEND_URL")
 ]
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
-DEBUG = env("DEBUG")
-
-SECRET_KEY = env("SECRET_KEY")
-
-ROOT_URLCONF = "core.urls"
-
+# Wagtail settings
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
+WAGTAILIMAGES_EXTENSIONS = ["gif", "jpg", "jpeg", "png", "webp", "svg"]
+WAGTAIL_APPEND_SLASH = False
 TIME_ZONE = "UTC"
 
 INSTALLED_APPS = [
@@ -89,35 +106,3 @@ TEMPLATES = [
         },
     },
 ]
-
-STATIC_URL = "/admin/static/"
-
-STATIC_ROOT = env("STATIC_ROOT")
-
-MEDIA_ROOT = env("MEDIA_ROOT")
-
-MEDIA_URL = "/media/"
-
-CORS_ORIGIN_ALLOW_ALL = True
-
-CORS_ALLOW_CREDENTIALS = True
-
-WAGTAIL_SITE_NAME = "deekshithrao.com"
-
-WAGTAILIMAGES_EXTENSIONS = ["gif", "jpg", "jpeg", "png", "webp", "svg"]
-
-WAGTAIL_APPEND_SLASH = False
-
-DATABASES = {
-    "default": env.db("DB_URL")
-}
-
-WAGTAILADMIN_BASE_URL = env("WAGTAILADMIN_BASE_URL")
-
-FRONTEND_URL = env("FRONTEND_URL")
-
-INTERNAL_FRONTEND_URL = env("INTERNAL_FRONTEND_URL")
-
-REVALIDATE_TOKEN = env("REVALIDATE_TOKEN")
-
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")

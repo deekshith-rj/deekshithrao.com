@@ -18,6 +18,10 @@
 MUST:
 # DONE: About page - upgrade to add paragraph breaks, headings, perhaps a pic etc.
 # DONE: The page meta title is showing "About - Deekshtih Rao" - incorrect
+# TODO: Fix the Docker setup to work with Sam Ireland's images first if possible
+# TODO: Update the Docker setup to work with my code
+# TODO: Migrate the Docker setup to the new deployment repo 
+
 # TODO: Include WhatsApp & Facebook in the social sharing links (everywhere? - home page and project pages / blog posts)
 # DONE: H2 in project page / blog post is not large enough - no issue, data was incorrectly entered
 # TODO: About page - Title is not left-aligned
