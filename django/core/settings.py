@@ -9,7 +9,7 @@ env = environ.Env(
     REVALIDATE_TOKEN=(str, "12345"),
     STATIC_ROOT=(str, os.path.join(BASE_DIR, "static")),
     MEDIA_ROOT=(str, os.path.join(BASE_DIR, "media")),
-    DB_URL=(str, "sqlite:///db.sqlite3"),
+    DB_URL=(str, f"sqlite:///{PROJECT_DIR}/db.sqlite3"),
     WAGTAILADMIN_BASE_URL=(str, "admin"),
     # FRONTEND_URL=(str, "http://localhost"),
     INTERNAL_FRONTEND_URL=(str, "http://localhost:3000"),
@@ -44,7 +44,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
-# Wagtail settings
+# Wagtail / Misc settings
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 WAGTAILIMAGES_EXTENSIONS = ["gif", "jpg", "jpeg", "png", "webp", "svg"]
 WAGTAIL_APPEND_SLASH = False
